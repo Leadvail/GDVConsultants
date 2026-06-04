@@ -41,12 +41,12 @@
             <li><a href="#pillars"    id="nav-services"            >Services</a></li>
             <li><a href="#partners"   id="nav-careers"             >Careers</a></li>
             <li><a href="#insights"   id="nav-insights"            >Insights</a></li>
-            <li><a href="#main-footer" id="nav-contact"            >Contact</a></li>
+            <li><a href="#contact-modal" id="nav-contact"            >Contact</a></li>
           </ul>
 
           <!-- CTA Button -->
           <div class="nav-cta" id="nav-cta-wrap">
-            <a href="#main-footer" id="nav-cta-btn" class="btn btn-teal">Request a consultation</a>
+            <a href="#contact-modal" id="nav-cta-btn" class="btn btn-teal">Request a consultation</a>
           </div>
         </div>
 
@@ -460,6 +460,58 @@
   <!-- ═══════════════════════════════════════════
        JAVASCRIPT
   ═══════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       CONTACT MODAL
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="contact-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div class="modal-header">
+        <h2 id="modal-title">Request a Consultation</h2>
+        <p>Let's discuss how we can help develop your people and drive sustainable growth.</p>
+      </div>
+
+      <form class="contact-form" name="gdv-consultation" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="gdv-consultation" />
+        
+        <div class="form-group">
+          <label for="form-name-field">Full Name <span class="required">*</span></label>
+          <input type="text" id="form-name-field" name="full-name" required placeholder="Jane Doe" />
+        </div>
+        
+        <div class="form-group">
+          <label for="form-email">Email Address <span class="required">*</span></label>
+          <input type="email" id="form-email" name="email" required placeholder="jane@company.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="form-org">Organisation</label>
+          <input type="text" id="form-org" name="organisation" placeholder="Company Name" />
+        </div>
+
+        <div class="form-group">
+          <label for="form-interest">Area of Interest</label>
+          <select id="form-interest" name="area-of-interest">
+            <option value="Leadership Development">Leadership Development</option>
+            <option value="Cultural Transformation">Cultural Transformation</option>
+            <option value="Operational Capability">Operational Capability</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="form-message">Message <span class="required">*</span></label>
+          <textarea id="form-message" name="message" rows="4" required placeholder="How can we help?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-teal form-submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
   <script>
     // ── Bio panel data ─────────────────────────
     const partnerData = {
@@ -584,6 +636,44 @@
         navMenu.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    // ── Modal logic ─────────────────────────────
+    const modalOverlay = document.getElementById('contact-modal-overlay');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const contactLinks = [document.getElementById('nav-contact'), document.getElementById('nav-cta-btn')];
+
+    function openModal(e) {
+      if (e) e.preventDefault();
+      modalOverlay.classList.add('active');
+      modalOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden'; // prevent background scrolling
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      modalOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    contactLinks.forEach(link => {
+      if (link) {
+        link.addEventListener('click', (e) => {
+          // If mobile menu is open, close it first
+          if (navMenu.classList.contains('open')) {
+            navMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+          openModal(e);
+        });
+      }
+    });
+
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+    
+    // Close modal on clicking outside the card
+    window.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
     });
 
     // ── Scroll fade-in animations ───────────────
