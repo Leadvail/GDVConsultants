@@ -32,19 +32,22 @@
           </div>
         </a>
 
-        <!-- Nav Links -->
-        <ul class="nav-links" id="nav-links" role="list">
-          <li><a href="#hero"       id="nav-home"     class="active" aria-current="page">Home</a></li>
-          <li><a href="#who-we-are" id="nav-about"               >About Us</a></li>
-          <li><a href="#pillars"    id="nav-services"            >Services</a></li>
-          <li><a href="#partners"   id="nav-careers"             >Careers</a></li>
-          <li><a href="#insights"   id="nav-insights"            >Insights</a></li>
-          <li><a href="#main-footer" id="nav-contact"            >Contact</a></li>
-        </ul>
+        <!-- Nav Menu Group -->
+        <div class="nav-menu-group" id="nav-menu-group">
+          <!-- Nav Links -->
+          <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="#hero"       id="nav-home"     class="active" aria-current="page">Home</a></li>
+            <li><a href="#who-we-are" id="nav-about"               >About Us</a></li>
+            <li><a href="#pillars"    id="nav-services"            >Services</a></li>
+            <li><a href="#partners"   id="nav-careers"             >Careers</a></li>
+            <li><a href="#insights"   id="nav-insights"            >Insights</a></li>
+            <li><a href="#main-footer" id="nav-contact"            >Contact</a></li>
+          </ul>
 
-        <!-- CTA Button -->
-        <div class="nav-cta" id="nav-cta-wrap">
-          <a href="#main-footer" id="nav-cta-btn" class="btn btn-teal">Request a consultation</a>
+          <!-- CTA Button -->
+          <div class="nav-cta" id="nav-cta-wrap">
+            <a href="#main-footer" id="nav-cta-btn" class="btn btn-teal">Request a consultation</a>
+          </div>
         </div>
 
         <!-- Mobile Hamburger -->
@@ -568,20 +571,17 @@
 
     // ── Mobile menu toggle ──────────────────────
     const hamburger = document.getElementById('nav-hamburger');
-    const navLinks  = document.getElementById('nav-links');
-    const navCta    = document.getElementById('nav-cta-wrap');
+    const navMenu    = document.getElementById('nav-menu-group');
 
     hamburger.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      navCta.classList.toggle('open', open);
+      const open = navMenu.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', String(open));
     });
 
     // Close menu on link click
-    navLinks.querySelectorAll('a').forEach(link => {
+    navMenu.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navCta.classList.remove('open');
+        navMenu.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
       });
     });

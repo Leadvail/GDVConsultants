@@ -212,6 +212,13 @@ ul { list-style: none; }
   margin-top: 3px;
 }
 
+.nav-menu-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -1117,27 +1124,83 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-  .nav-links, .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-  
-  .nav-links.open {
+  .nav-menu-group { display: none; }
+  .nav-menu-group.open {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 80px;
+    top: 90px;
     left: 0;
     right: 0;
     background: var(--white);
-    padding: 20px 24px 32px;
-    box-shadow: var(--shadow-md);
-    gap: 4px;
+    padding: 24px 24px 36px;
+    box-shadow: var(--shadow-lg);
+    gap: 20px;
     border-top: 1px solid var(--light-gray);
+    z-index: 999;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
   }
   
-  .nav-links.open a { padding: 12px 8px; font-size: 0.95rem; }
-  .nav-cta.open { display: flex; justify-content: center; padding: 12px 24px 24px; background: var(--white); }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 4px;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 12px 8px;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
 
-  .hero-content { padding: 60px 0 120px; }
+  .nav-links a::after {
+    display: none;
+  }
+  
+  .nav-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-cta a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-inner {
+    height: 90px;
+  }
+
+  .nav-logo img {
+    height: 72px;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Animated Hamburger to X */
+  .nav-hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  #hero {
+    padding-top: 90px;
+  }
+
+  .hero-content { padding: 48px 0 96px; }
   .hero-title { font-size: 2rem; }
   .hero-subtitle { font-size: 0.95rem; }
 
@@ -1145,7 +1208,7 @@ ul { list-style: none; }
   .partners-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
   
-  #pillars, #partners, #who-we-are { padding: 72px 0; }
+  #pillars, #partners, #who-we-are { padding: 60px 0; }
 }
 
 /* ── SCROLL ANIMATIONS ──────────────────────── */
