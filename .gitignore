@@ -1,0 +1,17 @@
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+desktop.ini
+
+# Recycler Folder
+$RECYCLE.BIN/
+
+# VS Code/Editor configurations
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
