@@ -484,6 +484,11 @@ ul { list-style: none; }
   border-left: 4px solid var(--teal);
 }
 
+.who-stats .stat-box:nth-child(3) {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
 .stat-box .stat-number {
   font-family: var(--font-display);
   font-size: 1.8rem;
