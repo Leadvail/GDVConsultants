@@ -308,22 +308,14 @@
     .nav-links a {
       color: rgba(255,255,255,0.7) !important;
     }
-    .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links a:hover {
       color: var(--white) !important;
       background: transparent !important;
     }
     .nav-links a.active {
-      position: relative;
-    }
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 14px;
-      right: 14px;
-      height: 2px;
-      background: var(--yellow);
+      color: var(--navy) !important;
+      background: var(--yellow) !important;
+      border-radius: var(--radius-sm);
     }
     .nav-hamburger span {
       background: var(--white) !important;
@@ -336,10 +328,11 @@
   <header id="main-header" role="banner" class="scrolled">
     <div class="container">
       <nav class="nav-inner" aria-label="Main navigation">
-        <a href="index.html" class="nav-logo" aria-label="GDV Consultants Home">
+        <a href="index.html" class="nav-logo" aria-label="GDV Consultants Home" style="display:flex; align-items:center; gap: 12px; text-decoration: none;">
           <div class="nav-logo-img-wrap">
-            <img src="images/gdv_logo_transparent.png" alt="GDV Consultants — People Development" width="200" height="96" style="object-fit: contain;" />
+            <img src="images/gdv_hub_logo.png" alt="GDV Consultants" width="120" height="76" style="object-fit: contain;" />
           </div>
+          <span style="color: var(--yellow); font-family: var(--font-display); font-weight: 800; font-size: 1.8rem; letter-spacing: 0.05em; padding-left: 12px; border-left: 2px solid rgba(255,255,255,0.2);">HUB</span>
         </a>
         <div class="nav-menu-group" id="nav-menu-group">
           <ul class="nav-links" id="nav-links" role="list">
@@ -590,23 +583,21 @@
     const sections = document.querySelectorAll('.hub-row');
     const navItems = document.querySelectorAll('.nav-links a');
     
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 200)) {
-          current = section.getAttribute('id');
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navItems.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href').includes(id)) {
+              a.classList.add('active');
+            }
+          });
         }
       });
-      
-      navItems.forEach(a => {
-        a.classList.remove('active');
-        if (current && a.getAttribute('href').includes(current)) {
-          a.classList.add('active');
-        }
-      });
-    });
+    }, { threshold: 0.2, rootMargin: "-120px 0px -20% 0px" });
+    
+    sections.forEach(sec => navObserver.observe(sec));
   </script>
 </body>
 </html>
