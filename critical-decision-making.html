@@ -2,326 +2,350 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Critical Decision Making For High-Liability Teams - A One-Day Masterclass in Reducing Decision Inertia by GDV Consultants." />
   <title>Critical Decision Making | GDV Consultants</title>
   
+  <link rel="icon" type="image/png" href="images/favicon.PNG" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon.PNG" />
+  <link rel="apple-touch-icon" href="images/favicon.PNG" />
+  
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 
   <style>
-    :root {
-      --pdf-navy: #0e204c;
-      --pdf-teal: #1abcb0;
-      --pdf-yellow: #fddb59;
-      --pdf-light-yellow: #fef0b7;
-      --pdf-bg: #e6edf4;
+    /* Course Specific Styles on top of global style.css */
+    .course-hero {
+      padding: 160px 0 80px;
+      background: var(--off-white);
+      text-align: center;
+      position: relative;
     }
-
-    body {
-      background-color: var(--pdf-bg);
-      font-family: var(--font-body);
-      color: var(--navy);
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-
-    .one-pager-container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: var(--white);
-      box-shadow: var(--shadow-xl);
-      overflow: hidden;
-    }
-
-    /* ── HEADER ───────────────────────── */
-    .op-header {
-      background: var(--pdf-navy);
-      padding: 24px 40px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      border-bottom: 8px solid var(--pdf-yellow);
-    }
-
-    .op-header img {
-      height: 60px;
-    }
-
-    .op-header-text {
-      color: var(--pdf-teal);
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.2rem;
+    
+    .course-hero-badge {
+      display: inline-block;
+      background: rgba(26,188,176,0.15);
+      color: var(--teal-dark);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-top: 10px;
+      margin-bottom: 24px;
     }
 
-    /* ── TITLE AREA ───────────────────── */
-    .op-title-area {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(to bottom, #ffffff, #eef3f9);
-    }
-
-    .op-title-area h1 {
+    .course-hero h1 {
       font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 800;
-      color: var(--pdf-navy);
-      font-size: 2.2rem;
-      margin: 0 0 16px;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 24px;
       text-transform: uppercase;
-      line-height: 1.2;
     }
 
-    .op-title-area h2 {
-      color: var(--pdf-teal);
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0;
+    .course-hero p.subtitle {
+      font-size: 1.25rem;
+      color: var(--text-body);
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
     }
-
-    /* ── CARDS SECTION ────────────────── */
-    .op-cards {
-      padding: 0 40px 40px;
+    
+    .course-hero .btn-group {
       display: flex;
-      flex-direction: column;
-      gap: 24px;
-      background: #eef3f9;
-    }
-
-    .op-card {
-      display: flex;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .op-card-left {
-      background: var(--pdf-yellow);
-      padding: 32px 24px;
-      display: flex;
-      align-items: center;
+      gap: 16px;
       justify-content: center;
-      width: 35%;
+      flex-wrap: wrap;
     }
 
-    .op-card-left h3 {
-      color: var(--white);
+    .course-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .course-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+
+    .card-amber::before { background: var(--amber-grad); }
+    .card-teal::before { background: var(--teal-grad); }
+    
+    .course-card h3 {
       font-family: var(--font-display);
       font-size: 1.8rem;
-      font-weight: 800;
-      margin: 0;
-      text-align: center;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    }
-
-    .op-card-right {
-      background: var(--pdf-light-yellow);
-      padding: 24px 32px;
-      width: 65%;
+      margin-bottom: 24px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      gap: 12px;
     }
+    
+    .card-amber h3 { color: var(--amber-dark); }
+    .card-teal h3 { color: var(--teal-dark); }
 
-    .op-card-right ul {
+    .course-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    .op-card-right ul li {
+    .course-list li {
+      font-size: 1.1rem;
+      color: var(--text-body);
+      margin-bottom: 16px;
+      padding-left: 32px;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .course-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--teal);
+      font-weight: 800;
       font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--pdf-navy);
-      margin-bottom: 8px;
+    }
+
+    .card-amber .course-list li::before {
+      content: '×';
+      color: var(--amber);
+      font-size: 1.4rem;
+      top: -2px;
+    }
+
+    .overview-section {
+      padding: 80px 0;
+      background: var(--white);
     }
     
-    .op-card-right ul li:last-child {
-      margin-bottom: 0;
-    }
-
-    /* ── WORKSHOP OVERVIEW ────────────── */
-    .op-overview {
-      margin: 0 40px 40px;
-      border: 2px solid var(--pdf-navy);
-      border-radius: 16px;
-      padding: 32px;
-      background: #eef3f9;
-    }
-
-    .op-overview h3 {
-      color: var(--pdf-navy);
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      margin: 0 0 20px;
-    }
-
-    .op-overview p {
-      margin: 0 0 12px;
-      font-size: 1.1rem;
-    }
-
-    .op-overview p strong {
-      color: var(--pdf-navy);
-    }
-
-    .op-overview h4 {
-      margin: 24px 0 12px;
-      font-size: 1.2rem;
-      color: var(--pdf-navy);
-    }
-
-    .op-overview-list {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .op-overview-list li {
-      margin-bottom: 12px;
-      font-size: 1.05rem;
-    }
-
-    .op-overview-list li strong {
-      color: var(--pdf-navy);
-    }
-
-    /* ── WHY GDV ──────────────────────── */
-    .op-why {
-      background: var(--pdf-navy);
-      color: var(--white);
+    .overview-box {
+      border: 2px solid rgba(13,27,75,0.1);
+      border-radius: var(--radius-lg);
       padding: 40px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .overview-stat {
+      background: var(--off-white);
+      padding: 24px;
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+    
+    .overview-stat .label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .overview-stat .val {
+      font-size: 1.1rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    
+    .outcomes-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    
+    .outcome-item {
+      background: var(--off-white);
+      padding: 24px;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--navy);
+    }
+    
+    .outcome-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    
+    .outcome-item p {
+      font-size: 0.95rem;
+      margin: 0;
+      color: var(--text-body);
+    }
+    
+    .why-gdv-section {
+      padding: 80px 0;
+      background: var(--navy);
+      color: var(--white);
       text-align: center;
     }
 
-    .op-why h3 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      margin: 0 0 20px;
-      text-align: left;
-    }
-
-    .op-why p {
-      text-align: left;
-      font-size: 1.05rem;
-      margin-bottom: 24px;
-      line-height: 1.7;
-    }
-
-    .op-why-roles {
-      font-weight: 600;
-      font-size: 1.15rem;
-      margin-bottom: 32px;
-    }
-
-    .op-quote {
-      color: var(--pdf-yellow);
-      font-size: 1.4rem;
-      font-style: italic;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    /* ── CONSULTATION & BOOKING ───────── */
-    .op-consult {
-      background: var(--pdf-teal);
+    .why-gdv-section .section-title {
       color: var(--white);
-      padding: 40px;
-    }
-
-    .op-consult h3 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      margin: 0 0 20px;
-    }
-
-    .op-consult p {
-      font-size: 1.05rem;
-      margin-bottom: 16px;
-    }
-
-    .op-investment {
-      background: var(--pdf-navy);
-      color: var(--white);
-      padding: 32px 40px;
     }
     
-    .op-investment p {
+    .why-gdv-text {
       font-size: 1.15rem;
-      margin: 0 0 16px;
+      max-width: 800px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.9);
     }
-
-    .op-investment p.price {
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin: 0;
-    }
-
-    /* ── FOOTER ACTIONS ───────────────── */
-    .op-actions {
-      padding: 40px;
+    
+    .why-gdv-roles {
       display: flex;
       justify-content: center;
-      gap: 24px;
-      background: var(--off-white);
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .role-badge {
+      background: rgba(255,255,255,0.1);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    
+    .quote-block {
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      color: var(--amber);
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+      text-align: center;
+      color: var(--white);
+    }
+    
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+    }
+    
+    .cta-section p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 16px;
+      line-height: 1.6;
+    }
+    
+    .cta-investment {
+      display: inline-block;
+      background: rgba(0,0,0,0.15);
+      padding: 16px 32px;
+      border-radius: var(--radius-md);
+      margin: 24px 0 32px;
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
     @media (max-width: 768px) {
-      .one-pager-container {
-        margin: 0;
-        border-radius: 0;
-      }
-      .op-header { padding: 20px; }
-      .op-title-area { padding: 32px 20px; }
-      .op-title-area h1 { font-size: 1.8rem; }
-      .op-cards { padding: 0 20px 32px; }
-      .op-card { flex-direction: column; }
-      .op-card-left, .op-card-right { width: 100%; }
-      .op-overview { margin: 0 20px 32px; padding: 24px; }
-      .op-why, .op-consult, .op-investment, .op-actions { padding: 32px 20px; }
-      .op-actions { flex-direction: column; }
+      .course-grid { grid-template-columns: 1fr; }
+      .overview-grid { grid-template-columns: 1fr; }
+      .outcomes-list { grid-template-columns: 1fr; }
+      .why-gdv-roles { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="one-pager-container">
-    
-    <header class="op-header">
-      <img src="images/gdv_logo_transparent.png" alt="GDV Consultants Logo" onerror="this.src='images/gdv_logo.png'" />
-      <div class="op-header-text">PEOPLE DEVELOPMENT</div>
-    </header>
-
-    <div class="op-title-area">
-      <h1>Critical Decision Making For High-Liability Teams</h1>
-      <h2>A One-Day Masterclass in Reducing Decision Inertia</h2>
-    </div>
-
-    <div class="op-cards">
-      <div class="op-card">
-        <div class="op-card-left">
-          <h3>The Challenge</h3>
+  <!-- HEADER -->
+  <header id="main-header" role="banner" class="scrolled">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-logo" aria-label="GDV Consultants Home">
+          <div class="nav-logo-img-wrap">
+            <img src="images/Logo.PNG" alt="GDV Consultants — People Development" width="200" height="96" />
+          </div>
+        </a>
+        <div class="nav-menu-group" id="nav-menu-group">
+          <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#who-we-are">About Us</a></li>
+            <li><a href="index.html#pillars">Services</a></li>
+            <li><a href="index.html#partners">Careers</a></li>
+            <li><a href="index.html#insights">Insights</a></li>
+            <li><a href="index.html?contact=true">Contact</a></li>
+          </ul>
+          <div class="nav-cta" id="nav-cta-wrap">
+            <a href="index.html?contact=true" id="nav-cta-btn" class="btn btn-teal">Request a consultation</a>
+          </div>
         </div>
-        <div class="op-card-right">
-          <ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="course-hero">
+    <div class="container">
+      <div class="course-hero-badge">People Development</div>
+      <h1 class="fade-up">Critical Decision Making<br>For High-Liability Teams</h1>
+      <p class="subtitle fade-up">A One-Day Masterclass in Reducing Decision Inertia.</p>
+      <div class="btn-group fade-up">
+        <a href="index.html?contact=true" class="btn btn-teal">Book Consultation</a>
+        <a href="training_documents/GDV - Critical Decision Making - OnePager v1.pdf" download class="btn btn-outline-navy">Download Course Brief (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER -->
+  <div class="section-wave" aria-hidden="true" style="margin-top:-2px;">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 C480,0 960,70 1440,20 L1440,0 L0,0 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- CHALLENGE & SOLUTION GRID -->
+  <section class="overview-section" style="padding-top:20px;">
+    <div class="container">
+      <div class="course-grid">
+        <!-- Challenge Card -->
+        <div class="course-card card-amber fade-up">
+          <h3>The Challenge</h3>
+          <ul class="course-list">
             <li>Ineffective decision making</li>
             <li>High consequence environment</li>
             <li>Limited time and information</li>
             <li>Complex issues</li>
           </ul>
         </div>
-      </div>
-
-      <div class="op-card">
-        <div class="op-card-left">
+        <!-- Solution Card -->
+        <div class="course-card card-teal fade-up" style="transition-delay: 0.1s;">
           <h3>The Solution</h3>
-        </div>
-        <div class="op-card-right">
-          <ul>
+          <ul class="course-list">
             <li>Confident Decision Making</li>
             <li>Rational Risk Judgement</li>
             <li>Effective Control Measures</li>
@@ -330,51 +354,143 @@
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="op-overview">
-      <h3>Workshop Overview</h3>
-      <p><strong>Format:</strong> 1-Day Intensive In-Person Workshop (On-site or Off-site)</p>
-      <p><strong>Audience:</strong> Operational Directors, Site Managers, Crisis Teams, Shift Leads.</p>
-      <p><strong>Capacity:</strong> Up to 12 delegates per session (to ensure coaching depth).</p>
+  <!-- WORKSHOP OVERVIEW -->
+  <section class="overview-section" style="padding-top: 0;">
+    <div class="container">
+      <div class="overview-box fade-up">
+        <h2 class="section-title" style="text-align: left; margin-bottom: 32px;">Workshop Overview</h2>
+        
+        <div class="overview-grid">
+          <div class="overview-stat">
+            <div class="label">Format</div>
+            <div class="val">1-Day Intensive<br><span style="font-size:0.85rem;font-weight:400;">In-Person (On-site or Off-site)</span></div>
+          </div>
+          <div class="overview-stat">
+            <div class="label">Audience</div>
+            <div class="val">Operational Directors, Site Managers, Crisis Teams, Shift Leads</div>
+          </div>
+          <div class="overview-stat">
+            <div class="label">Capacity</div>
+            <div class="val">Up to 12 delegates<br><span style="font-size:0.85rem;font-weight:400;">Per session to ensure coaching depth</span></div>
+          </div>
+        </div>
 
-      <h4>Key Learning Outcomes:</h4>
-      <ul class="op-overview-list">
-        <li><strong>Understanding decision-making processes:</strong> The theory behind decision-making and the importance of risk versus benefit.</li>
-        <li><strong>Combatting "Command Loneliness":</strong> How to hold the weight of responsibility without cracking under pressure.</li>
-        <li><strong>Situational Awareness:</strong> How to obtain, understand and use information - and the factors that can affect this.</li>
-        <li><strong>Human Factors:</strong> Understanding why your brain wants to take shortcuts (heuristics) and how to work with them.</li>
-      </ul>
-    </div>
+        <h3 style="font-family: var(--font-display); color: var(--navy); margin-bottom: 20px;">Key Learning Outcomes</h3>
+        <div class="outcomes-list">
+          <div class="outcome-item">
+            <h4>Understanding Processes</h4>
+            <p>The theory behind decision-making and the importance of risk versus benefit.</p>
+          </div>
+          <div class="outcome-item">
+            <h4>Combatting "Command Loneliness"</h4>
+            <p>How to hold the weight of responsibility without cracking under pressure.</p>
+          </div>
+          <div class="outcome-item">
+            <h4>Situational Awareness</h4>
+            <p>How to obtain, understand and use information - and the factors that can affect this.</p>
+          </div>
+          <div class="outcome-item">
+            <h4>Human Factors</h4>
+            <p>Understanding why your brain wants to take shortcuts (heuristics) and how to work with them.</p>
+          </div>
+        </div>
 
-    <div class="op-why">
-      <h3>Why GDV Consultants</h3>
-      <p>GDV is led by experts with 60+ years of experience in the UK Fire & Rescue Service, serving as commanders in high-reliability organisations. We translate decades of emergency service command experience into actionable competency frameworks, training and executive coaching for the corporate world.</p>
-      <div class="op-why-roles">
-        Architect of Staff Development Programmes – Assessor in critical leadership skills<br>
-        Analysis of Competency Frameworks – Executive Coach and Mentor<br>
-        Training Design and delivery
       </div>
-      <p class="op-quote">"We don't just tell you what to do. We rewire how you think under pressure."</p>
     </div>
+  </section>
 
-    <div class="op-consult">
-      <h3>Free Consultation Prior to Booking</h3>
-      <p>GDV are dedicated to tailoring staff development to the organisation they serve.</p>
-      <p>Before we deliver a single hour of training, we invest the time to understand your operational landscape. We host a <strong>45-minute</strong> diagnostic session with your L&D or operations team to explore your specific risk profile and cultural challenges.</p>
-      <p>This ensures that the subsequent masterclass is fully tailored to your organisation’s real-world needs, rather than delivered as a generic, off-the-shelf course.</p>
+  <!-- WHY GDV -->
+  <section class="why-gdv-section">
+    <div class="container">
+      <h2 class="section-title fade-up">Why GDV Consultants</h2>
+      <p class="why-gdv-text fade-up">GDV is led by experts with 60+ years of experience in the UK Fire & Rescue Service, serving as commanders in high-reliability organisations. We translate decades of emergency service command experience into actionable competency frameworks, training and executive coaching for the corporate world.</p>
+      
+      <div class="why-gdv-roles fade-up">
+        <div class="role-badge">Architect of Staff Development</div>
+        <div class="role-badge">Assessor in critical leadership</div>
+        <div class="role-badge">Executive Coach and Mentor</div>
+        <div class="role-badge">Training Design and delivery</div>
+      </div>
+
+      <div class="quote-block fade-up">
+        "We don't just tell you what to do. We rewire how you think under pressure."
+      </div>
     </div>
+  </section>
 
-    <div class="op-investment">
-      <p>Following the consultation, you can secure an introductory pilot session for your team. This allows you to stress-test our methodology and evaluate its impact firsthand.</p>
-      <p class="price">Investment: £1,000 + VAT <em>(Introductory rate)</em></p>
+  <!-- CTA / CONSULTATION -->
+  <section class="cta-section">
+    <div class="container fade-up">
+      <h2>Free Consultation Prior to Booking</h2>
+      <p>GDV are dedicated to tailoring staff development to the organisation they serve. Before we deliver a single hour of training, we invest the time to understand your operational landscape.</p>
+      <p>We host a <strong>45-minute diagnostic session</strong> with your L&D or operations team to explore your specific risk profile and cultural challenges. This ensures that the subsequent masterclass is fully tailored to your organisation’s real-world needs.</p>
+      
+      <div class="cta-investment">
+        Investment: £1,000 + VAT (Introductory pilot session)
+      </div>
+      
+      <div>
+        <a href="index.html?contact=true" class="btn btn-amber">Book Your Consultation</a>
+      </div>
     </div>
+  </section>
 
-    <div class="op-actions">
-      <a href="index.html?contact=true" class="btn btn-teal">Book Consultation</a>
-      <a href="training_documents/GDV - Critical Decision Making - OnePager v1.pdf" download class="btn btn-outline-navy">Download Course Brief (PDF)</a>
+  <!-- FOOTER -->
+  <footer id="main-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo-col">
+          <div class="footer-logo-wrap">
+            <img src="images/Logo.PNG" alt="GDV Consultants" width="180" height="72" class="footer-logo-img" />
+          </div>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);max-width:200px;line-height:1.6;margin-top:4px;">
+            Empowering people. Driving growth. Building tomorrow.
+          </p>
+        </div>
+        <div class="footer-col" role="group">
+          <div class="footer-col-title">Quick Contact</div>
+          <div class="footer-contact-item">
+            <a href="tel:+115923225890" style="color:rgba(255,255,255,0.75);">+1 159 23 225 890</a>
+          </div>
+          <div class="footer-contact-item">
+            <a href="mailto:info@gdvconsultants.com" style="color:rgba(255,255,255,0.75);">info@gdvconsultants.com</a>
+          </div>
+        </div>
+        <div class="footer-col" role="navigation">
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html#who-we-are">About Us</a></li>
+            <li><a href="index.html#pillars">Services</a></li>
+            <li><a href="index.html?contact=true">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> GDV Consultants. All rights reserved.</p>
+      </div>
     </div>
+  </footer>
 
-  </div>
-
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+    
+    // Intersection Observer for fade animations
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
