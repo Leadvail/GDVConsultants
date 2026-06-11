@@ -148,6 +148,7 @@
 
     .hub-row {
       margin-bottom: 64px;
+      scroll-margin-top: 100px;
     }
     
     .hub-row:last-child {
@@ -198,6 +199,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 24px 24px 0 24px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
     }
 
     .media-thumb svg {
@@ -308,11 +312,9 @@
         <div class="nav-menu-group" id="nav-menu-group">
           <ul class="nav-links" id="nav-links" role="list">
             <li><a href="index.html#hero">Home</a></li>
-            <li><a href="index.html#who-we-are">About Us</a></li>
-            <li><a href="index.html#pillars">Services</a></li>
-            <li><a href="index.html#partners">Careers</a></li>
-            <li><a href="hub.html" class="active" aria-current="page">HUB</a></li>
-            <li><a href="index.html?contact=true">Contact</a></li>
+            <li><a href="#podcasts">Podcasts</a></li>
+            <li><a href="#vlogs">Vlogs</a></li>
+            <li><a href="#articles">Articles</a></li>
           </ul>
           <div class="nav-cta" id="nav-cta-wrap">
             <a href="index.html?contact=true" id="nav-cta-btn" class="btn btn-teal">Request a consultation</a>
@@ -330,7 +332,10 @@
   <section class="hub-hero">
     <div class="container">
       <span class="hub-hero-label fade-up">🎬 LATEST FEATURED MEDIA</span>
-      <h1 class="hub-hero-title fade-up">What the Boardroom Can Learn from a Fire Ground Commander</h1>
+      <h1 class="hub-hero-title fade-up">GDV CONSULTANTS MEDIA HUB</h1>
+      <p class="fade-up" style="max-width: 800px; margin: 0 auto 40px; font-size: 1.15rem; color: var(--text-body); line-height: 1.6;">
+        A dedicated resource centre translating over 60 years of public sector command experience into practical tools for corporate excellence. Stream our latest podcast episodes, watch our technical vlogs, and read our strategic briefs on human factors and staff retention.
+      </p>
       
       <div class="hub-video-placeholder fade-up" style="transition-delay: 0.1s;">
         <div class="hub-play-btn">
@@ -357,7 +362,7 @@
     <div class="container">
 
       <!-- Row 1: Podcasts -->
-      <div class="hub-row fade-up">
+      <div class="hub-row fade-up" id="podcasts">
         <div class="hub-row-header">
           <h2 class="hub-row-title">🎙️ 'Commanding the Room' Podcast</h2>
         </div>
@@ -391,7 +396,7 @@
       </div>
 
       <!-- Row 2: Vlogs -->
-      <div class="hub-row fade-up">
+      <div class="hub-row fade-up" id="vlogs">
         <div class="hub-row-header">
           <h2 class="hub-row-title">🎥 Vlogs & Practical Masterclasses</h2>
         </div>
@@ -425,7 +430,7 @@
       </div>
 
       <!-- Row 3: Articles -->
-      <div class="hub-row fade-up">
+      <div class="hub-row fade-up" id="articles">
         <div class="hub-row-header">
           <h2 class="hub-row-title">📝 Strategic Articles & Case Studies</h2>
         </div>
