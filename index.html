@@ -549,7 +549,7 @@
           <p>True capability is built where organisational strategy meets human performance. Our development programmes bridge the gap between compliance theory and real-world execution. We stress-test your teams, refine their leadership behaviours, and equip them with the communication tools needed to handle complex, high-consequence environments.</p>
           <p>Select a masterclass below to view full course structures and outcomes:</p>
           <ul class="masterclass-list">
-            <li><strong>👉 Critical Decision-Making for High-Liability Teams</strong><br>A 1-Day Masterclass in Reducing Decision Inertia.</li>
+            <li><strong>👉 Critical Decision-Making for High-Liability Teams</strong><br>A 1-Day Masterclass in Reducing Decision Inertia.<br><a href="critical-decision-making.html" target="_blank" class="btn btn-outline-navy" style="display: inline-block; margin-top: 10px; padding: 4px 12px; font-size: 0.8rem;">Course Detail</a></li>
             <li><strong>👉 High-Stakes Communication & Managing Conflict</strong><br>Mastering difficult conversations, delivering critical feedback, and maintaining team cohesion under pressure.</li>
             <li><strong>👉 Values-Driven Leadership & Culture</strong><br>Aligning supervisory behaviours with organisational safety, accountability, and performance goals.</li>
             <li><strong>👉 Interview Mastery & Career Progression</strong><br>Practical coaching and behavioural frameworks to prepare internal talent for rigorous promotional processes.</li>
@@ -796,6 +796,11 @@
     window.addEventListener('click', (e) => {
       if (e.target === modalOverlay) closeModal();
     });
+
+    // Check URL for contact trigger
+    if (window.location.search.includes('contact=true')) {
+      openModal();
+    }
 
     // ── Scroll fade-in animations ───────────────
     const fadeEls = document.querySelectorAll('.fade-up');
