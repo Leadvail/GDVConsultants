@@ -818,7 +818,7 @@ ul { list-style: none; }
 }
 
 .bio-panel:not([hidden]) {
-  max-height: 600px;
+  max-height: 2000px;
   opacity: 1;
   transform: translateY(0);
 }
