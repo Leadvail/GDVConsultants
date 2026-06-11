@@ -660,6 +660,134 @@ ul { list-style: none; }
   line-height: 1.65;
 }
 
+.pillar-btn-wrap {
+  margin-top: 24px;
+}
+
+.pillar-more-btn {
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+
+/* ── PILLAR EXPANSION PANEL ────────────────────── */
+.pillar-panel {
+  width: 100%;
+  margin-top: 28px;
+  border-radius: var(--radius-xl);
+  background: var(--navy);
+  color: var(--white);
+  overflow: hidden;
+  position: relative;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition:
+    max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity    0.4s ease,
+    transform  0.4s ease;
+}
+
+.pillar-panel:not([hidden]) {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillar-panel-arrow {
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 10px;
+  background: var(--navy);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transition: left var(--transition);
+}
+
+.pillar-panel-inner {
+  padding: 36px 40px;
+  position: relative;
+}
+
+.pillar-panel-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-panel-close:hover {
+  background: rgba(255,255,255,0.2);
+  color: var(--white);
+}
+
+.pillar-panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pillar-panel-text p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.pillar-panel-text p:last-child {
+  margin-bottom: 0;
+}
+
+.masterclass-list {
+  list-style: none;
+  margin-top: 16px;
+  padding-left: 0;
+  text-align: left;
+}
+
+.masterclass-list li {
+  background: rgba(255,255,255,0.05);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-left: 3px solid var(--teal);
+}
+
+.masterclass-list li:last-child {
+  margin-bottom: 0;
+}
+
+.masterclass-list strong {
+  color: var(--white);
+  font-family: var(--font-display);
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.coming-soon {
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+  font-size: 1.1rem !important;
+}
+
+.pillar-cta-btn {
+  align-self: center;
+  padding: 12px 32px;
+}
+
 /* ── MEET THE PARTNERS ──────────────────────── */
 #partners {
   padding: 100px 0;

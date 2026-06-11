@@ -200,6 +200,9 @@
           </div>
           <div class="pillar-label" id="pillar-growth-title">Growth</div>
           <p class="pillar-desc">Eliminate talent drain and build resilient leadership pipelines by transforming existing experience into structured career progression frameworks.</p>
+          <div class="pillar-btn-wrap">
+            <button class="btn btn-outline-navy pillar-more-btn" data-pillar="1" aria-expanded="false" aria-controls="pillar-panel">More Detail</button>
+          </div>
         </article>
 
         <!-- DEVELOPMENT card -->
@@ -215,6 +218,9 @@
           </div>
           <div class="pillar-label" id="pillar-dev-title">Development</div>
           <p class="pillar-desc">Empower individuals and teams through tailored training aligned to the overall organsational goals.</p>
+          <div class="pillar-btn-wrap">
+            <button class="btn btn-outline-navy pillar-more-btn" data-pillar="2" aria-expanded="false" aria-controls="pillar-panel">More Detail</button>
+          </div>
         </article>
 
         <!-- VISION card -->
@@ -231,9 +237,31 @@
           </div>
           <div class="pillar-label" id="pillar-vision-title">Vision</div>
           <p class="pillar-desc">Establish long-term operational clarity. We design bespoke, self-sustaining competency frameworks and development programmes tailored to your specific risk profile.</p>
+          <div class="pillar-btn-wrap">
+            <button class="btn btn-outline-navy pillar-more-btn" data-pillar="3" aria-expanded="false" aria-controls="pillar-panel">More Detail</button>
+          </div>
         </article>
 
       </div>
+
+      <!-- Expandable Pillar Panel -->
+      <div class="pillar-panel" id="pillar-panel" hidden aria-hidden="true">
+        <div class="pillar-panel-arrow" id="pillar-panel-arrow"></div>
+        <div class="pillar-panel-inner">
+          <button class="pillar-panel-close" id="pillar-panel-close" aria-label="Close more detail">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+          <div class="pillar-panel-content">
+            <div class="pillar-panel-text" id="pillar-panel-text">
+              <!-- Content populated via JS -->
+            </div>
+            <div class="pillar-panel-cta">
+              <button class="btn btn-teal pillar-cta-btn">Book a consultation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </section>
@@ -509,6 +537,99 @@
   </div>
 
   <script>
+    // ── Pillar panel data ────────────────────────
+    const pillarData = {
+      1: {
+        title: 'Growth',
+        content: '<p class="coming-soon">Full details — <strong>TBC</strong></p>'
+      },
+      2: {
+        title: 'Development',
+        content: `
+          <p>True capability is built where organisational strategy meets human performance. Our development programmes bridge the gap between compliance theory and real-world execution. We stress-test your teams, refine their leadership behaviours, and equip them with the communication tools needed to handle complex, high-consequence environments.</p>
+          <p>Select a masterclass below to view full course structures and outcomes:</p>
+          <ul class="masterclass-list">
+            <li><strong>👉 Critical Decision-Making for High-Liability Teams</strong><br>A 1-Day Masterclass in Reducing Decision Inertia.</li>
+            <li><strong>👉 High-Stakes Communication & Managing Conflict</strong><br>Mastering difficult conversations, delivering critical feedback, and maintaining team cohesion under pressure.</li>
+            <li><strong>👉 Values-Driven Leadership & Culture</strong><br>Aligning supervisory behaviours with organisational safety, accountability, and performance goals.</li>
+            <li><strong>👉 Interview Mastery & Career Progression</strong><br>Practical coaching and behavioural frameworks to prepare internal talent for rigorous promotional processes.</li>
+          </ul>
+        `
+      },
+      3: {
+        title: 'Vision',
+        content: '<p class="coming-soon">Full details — <strong>TBC</strong></p>'
+      }
+    };
+
+    // ── Pillar panel logic ────────────────────────
+    const pillarPanel      = document.getElementById('pillar-panel');
+    const pillarPanelArrow = document.getElementById('pillar-panel-arrow');
+    const pillarPanelText  = document.getElementById('pillar-panel-text');
+    const pillarPanelClose = document.getElementById('pillar-panel-close');
+    const pillarBtns       = document.querySelectorAll('.pillar-more-btn[data-pillar]');
+    const pillarCtaBtn     = document.querySelector('.pillar-cta-btn');
+
+    let activePillar = null;
+
+    function openPillarPanel(pillarId, triggerBtn) {
+      const data = pillarData[pillarId];
+      if (!data) return;
+
+      // Populate text
+      pillarPanelText.innerHTML = data.content;
+
+      // Position the arrow
+      const btnRect = triggerBtn.getBoundingClientRect();
+      const containerRect = document.querySelector('.pillars-grid').getBoundingClientRect();
+      // Arrow center should align with button center relative to the container
+      const offset = (btnRect.left + btnRect.width / 2) - containerRect.left;
+      pillarPanelArrow.style.left = \`\${offset - 10}px\`;
+
+      // Show panel
+      pillarPanel.hidden = false;
+      pillarPanel.setAttribute('aria-hidden', 'false');
+
+      // Scroll into view gently
+      setTimeout(() => {
+        pillarPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 50);
+
+      activePillar = pillarId;
+    }
+
+    function closePillarPanel() {
+      pillarPanel.hidden = true;
+      pillarPanel.setAttribute('aria-hidden', 'true');
+      pillarBtns.forEach(b => b.setAttribute('aria-expanded', 'false'));
+      activePillar = null;
+    }
+
+    pillarBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-pillar');
+
+        if (activePillar === id && !pillarPanel.hidden) {
+          closePillarPanel();
+          return;
+        }
+
+        pillarBtns.forEach(b => b.setAttribute('aria-expanded', 'false'));
+        btn.setAttribute('aria-expanded', 'true');
+
+        openPillarPanel(id, btn);
+      });
+    });
+
+    if (pillarPanelClose) pillarPanelClose.addEventListener('click', closePillarPanel);
+    
+    // Wire up CTA button to open the contact modal
+    if (pillarCtaBtn) {
+      pillarCtaBtn.addEventListener('click', (e) => {
+        if (typeof openModal === 'function') openModal(e);
+      });
+    }
+
     // ── Bio panel data ─────────────────────────
     const partnerData = {
       1: {
