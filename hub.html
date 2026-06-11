@@ -296,6 +296,38 @@
       .hub-row-header { flex-direction: column; align-items: flex-start; gap: 8px; }
       .hub-hero-title { font-size: 2rem; }
     }
+
+    /* Custom Header overrides for HUB */
+    #main-header {
+      background: var(--navy) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+    }
+    #main-header.scrolled {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3) !important;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.7) !important;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white) !important;
+      background: transparent !important;
+    }
+    .nav-links a.active {
+      position: relative;
+    }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--yellow);
+    }
+    .nav-hamburger span {
+      background: var(--white) !important;
+    }
   </style>
 </head>
 <body>
@@ -306,12 +338,11 @@
       <nav class="nav-inner" aria-label="Main navigation">
         <a href="index.html" class="nav-logo" aria-label="GDV Consultants Home">
           <div class="nav-logo-img-wrap">
-            <img src="images/Logo.PNG" alt="GDV Consultants — People Development" width="200" height="96" />
+            <img src="images/gdv_logo_transparent.png" alt="GDV Consultants — People Development" width="200" height="96" style="object-fit: contain;" />
           </div>
         </a>
         <div class="nav-menu-group" id="nav-menu-group">
           <ul class="nav-links" id="nav-links" role="list">
-            <li><a href="index.html#hero">Home</a></li>
             <li><a href="#podcasts">Podcasts</a></li>
             <li><a href="#vlogs">Vlogs</a></li>
             <li><a href="#blog">Blog</a></li>
@@ -554,6 +585,28 @@
       });
     }, { threshold: 0.1 });
     fadeEls.forEach(el => observer.observe(el));
+
+    // ScrollSpy for Navigation
+    const sections = document.querySelectorAll('.hub-row');
+    const navItems = document.querySelectorAll('.nav-links a');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navItems.forEach(a => {
+        a.classList.remove('active');
+        if (current && a.getAttribute('href').includes(current)) {
+          a.classList.add('active');
+        }
+      });
+    });
   </script>
 </body>
 </html>
