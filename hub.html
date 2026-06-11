@@ -313,9 +313,18 @@
       background: transparent !important;
     }
     .nav-links a.active {
-      color: var(--navy) !important;
-      background: var(--amber) !important;
-      border-radius: var(--radius-sm);
+      color: var(--amber) !important;
+      background: transparent !important;
+      position: relative;
+    }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 14px;
+      right: 14px;
+      height: 2px;
+      background: var(--amber);
     }
     .nav-hamburger span {
       background: var(--white) !important;
