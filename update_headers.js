@@ -34,6 +34,17 @@ const css = `
     .nav-hamburger span {
       background: var(--white) !important;
     }
+    @media (max-width: 768px) {
+      .nav-menu-group.open {
+        background: var(--navy) !important;
+        border-top: 1px solid rgba(255,255,255,0.1) !important;
+      }
+      .blog-hero { padding: 120px 20px 60px !important; }
+      .blog-content { padding: 40px 20px !important; }
+      .blog-article h2 { font-size: 1.5rem !important; margin: 32px 0 16px !important; }
+      .hub-grid { grid-template-columns: 1fr !important; }
+      .hub-row-header { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+    }
 `;
 
 const html = `<!-- HEADER -->
