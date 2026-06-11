@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understanding the crucial differences between good leaders and good managers across four distinct situation types." />
+  <title>The Power of Influence | GDV Consultants Blog</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.PNG" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon.PNG" />
+  <link rel="apple-touch-icon" href="images/favicon.PNG" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    .blog-hero {
+      padding: 180px 0 80px;
+      background: var(--off-white);
+      text-align: center;
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .blog-tag {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--teal-dark);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .blog-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .blog-content {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .blog-article {
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-body);
+    }
+
+    .blog-article h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 48px 0 24px;
+    }
+
+    .blog-article h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 32px 0 16px;
+    }
+
+    .blog-article p {
+      margin-bottom: 24px;
+    }
+
+    .blog-article ul, .blog-article ol {
+      margin-bottom: 32px;
+      padding-left: 24px;
+    }
+
+    .blog-article li {
+      margin-bottom: 12px;
+    }
+    
+    .blog-article strong {
+      color: var(--navy);
+    }
+    
+    .blog-article .highlight-box {
+      background: var(--off-white);
+      border-left: 4px solid var(--teal);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal);
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: color var(--transition);
+    }
+    
+    .blog-back:hover {
+      color: var(--teal-dark);
+    }
+
+    .case-study {
+      background: #f8fafc;
+      border: 1px solid rgba(13,27,75,0.1);
+      padding: 32px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+    }
+    
+    .case-study h4 {
+      color: var(--teal-dark);
+      font-family: var(--font-display);
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="main-header" role="banner" class="scrolled">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-logo" aria-label="GDV Consultants Home">
+          <div class="nav-logo-img-wrap">
+            <img src="images/Logo.PNG" alt="GDV Consultants" width="200" height="96" />
+          </div>
+        </a>
+        <div class="nav-menu-group" id="nav-menu-group">
+          <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="hub.html#podcasts">Podcasts</a></li>
+            <li><a href="hub.html#vlogs">Vlogs</a></li>
+            <li><a href="hub.html#blog" class="active">Blog</a></li>
+          </ul>
+          <div class="nav-cta" id="nav-cta-wrap">
+            <a href="index.html?contact=true" id="nav-cta-btn" class="btn btn-teal">Request a consultation</a>
+          </div>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BLOG HERO -->
+  <section class="blog-hero">
+    <div class="container fade-up">
+      <span class="blog-tag">MANAGEMENT DEVELOPMENT</span>
+      <h1 class="blog-hero-title">The Power of Influence</h1>
+    </div>
+  </section>
+
+  <!-- BLOG CONTENT -->
+  <section class="blog-content">
+    <div class="container">
+      <div class="blog-article fade-up">
+        <a href="hub.html#blog" class="blog-back">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to HUB
+        </a>
+
+        <h2>The Person of Power Concept</h2>
+        <p>In any management or leadership situation, the person of power will naturally fall into one of four distinct types. Understanding which one you are operating within, and identifying the consequences of each, is crucial to effective control and decision-making.</p>
+        
+        <p>This dynamic plays out in the tension between the <strong>Company</strong> (the manager's focus) and the <strong>People</strong> (the leader's focus).</p>
+
+        <h3>The Four Situation Types</h3>
+        <ul>
+          <li><strong>Type 1 - The Golden Child:</strong> Good manager, Bad Leader</li>
+          <li><strong>Type 2 - The Hero:</strong> Bad manager, Good leader</li>
+          <li><strong>Type 3 - The Dream:</strong> Good manager, Good leader</li>
+          <li><strong>Type 4 - Pointless:</strong> Bad manager, Bad leader</li>
+        </ul>
+
+        <div class="highlight-box">
+          <h4>Type 1: The Golden Child</h4>
+          <p><strong>Manager:</strong> As the golden child, you understand what is in the best interests of the company and carry out every action you can to uphold its values and beliefs.</p>
+          <p><strong>Leader:</strong> Your workforce must take second place. Although their values may be strong, they are not what you decide to be the most important in this situation.</p>
+        </div>
+
+        <div class="highlight-box">
+          <h4>Type 2: The Hero</h4>
+          <p><strong>Manager:</strong> As the hero, your actions do not predominantly have the best interest for the company. Your focus is not solely on the company's reason for existence.</p>
+          <p><strong>Leader:</strong> Your subordinates are a high priority to you. You take great pride in upkeeping morale and go out of your way to attend to what they need. You work for them.</p>
+        </div>
+
+        <div class="highlight-box">
+          <h4>Type 3: The Dream</h4>
+          <p><strong>Manager:</strong> As the dream, you understand what is in the best interests of the company and carry out every action you can to uphold its values and beliefs.</p>
+          <p><strong>Leader:</strong> Your subordinates are a high priority to you. You take great pride in upkeeping morale and go out of your way to attend to what they need. You work for them.</p>
+        </div>
+
+        <div class="highlight-box">
+          <h4>Type 4: Pointless</h4>
+          <p><strong>Manager:</strong> Your actions do not predominantly have the best interest for the company. Your focus is not solely on the company's reason for existence.</p>
+          <p><strong>Leader:</strong> Your workforce must take second place. Although their values may be strong, they are not what you decide to be the most important in this situation.</p>
+        </div>
+
+        <h2>Applied Management: Case Studies</h2>
+        <p>Review the following practical case studies. Think about which "type" of decision-making might be deployed in each scenario, and what the consequences of those manager vs. leader actions would be.</p>
+
+        <div class="case-study">
+          <h4>Case Study 1: The Gym Equipment</h4>
+          <p>Your station commander has emailed you about a piece of gym equipment being inappropriately stored in the appliance bay. This equipment is not supplied by the brigade or welfare and does not comply with the risk assessment for the appliance bay. The SC has asked you to have it removed and taken off station immediately.</p>
+          <p>Your crew express that this piece of gym equipment is not causing a problem to anyone and would like it to stay as it is used regularly by most watches.</p>
+        </div>
+
+        <div class="case-study">
+          <h4>Case Study 2: The Transfer</h4>
+          <p>You are informed about a new staff member being transferred in from another station to join your watch. You hear rumours that this individual is not in the Union and had once broken the picket lines during strike action. Your watch are not happy. One of your team is offering to act up just to block this move. Neither you nor your watch have ever heard of or met this person before.</p>
+        </div>
+
+        <div class="case-study">
+          <h4>Case Study 3: The Specialist Appliance</h4>
+          <p>Your station has a specialist appliance of which you need to have a certain number of staff trained to ride. One of your crew members has only done two years and considers themselves inexperienced. This member is required to complete the specialist appliance training to keep up with your required ridership. They are refusing to do the planned training course, informing you they will go sick if forced.</p>
+        </div>
+
+        <div class="case-study">
+          <h4>Case Study 4: The Open Day</h4>
+          <p>You are contacted at late notice to take the appliance down to the local community centre and hand out fire safety advice at an open day. Your crew are not happy with the short notice and the timings clash with your planned mealtimes. The mess manager has just started cooking and states the food will be spoiled if left. Your driver informs you that there is a minor defect they can 'escalate' to keep the unit at the station.</p>
+        </div>
+
+        <div class="case-study">
+          <h4>Case Study 5: The Locked Safe</h4>
+          <p>One of your crew has returned from holiday after leaving their car in the yard (as agreed). Their car key is locked in the office safe. Keys to the safe are in the pocket of another one of your officers who is out on a protracted incident. The member returning from holiday lives two hours away and wants to go home. Some of your crew state they can break into the safe, but they might damage it.</p>
+        </div>
+
+        <div class="case-study">
+          <h4>Case Study 6: The Unofficial Arrangement</h4>
+          <p>You are on a night shift, two crew members from the day watch have stumbled into the watch room after going out for a few drinks. They said they have agreed with another team member to share their dorm and stay over. This is the first time you are hearing of this arrangement.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="hub-cta" style="background: var(--navy); padding: 80px 0; text-align: center; color: var(--white);">
+    <div class="container fade-up">
+      <h2 style="font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 16px; font-weight: 800;">Want to build a culture of decisive action?</h2>
+      <p style="font-size: 1.15rem; max-width: 700px; margin: 0 auto 32px; line-height: 1.6; color: rgba(255,255,255,0.8);">We translate high-consequence operational experience into tailored staff development aligned to your overall organisational goals.</p>
+      <a href="index.html?contact=true" class="btn btn-teal">REQUEST A CONSULTATION</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="main-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo-col">
+          <div class="footer-logo-wrap">
+            <img src="images/Logo.PNG" alt="GDV Consultants" width="180" height="72" class="footer-logo-img" />
+          </div>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);max-width:200px;line-height:1.6;margin-top:4px;">
+            Empowering people. Driving growth. Building tomorrow.
+          </p>
+        </div>
+        <div class="footer-col" role="group">
+          <div class="footer-col-title">Quick Contact</div>
+          <div class="footer-contact-item">
+            <a href="tel:+115923225890" style="color:rgba(255,255,255,0.75);">+1 159 23 225 890</a>
+          </div>
+          <div class="footer-contact-item">
+            <a href="mailto:info@gdvconsultants.com" style="color:rgba(255,255,255,0.75);">info@gdvconsultants.com</a>
+          </div>
+        </div>
+        <div class="footer-col" role="navigation">
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html#who-we-are">About Us</a></li>
+            <li><a href="index.html#pillars">Services</a></li>
+            <li><a href="index.html?contact=true">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> GDV Consultants. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+    
+    // Mobile menu toggle
+    const hamburger = document.getElementById('nav-hamburger');
+    const navMenu    = document.getElementById('nav-menu-group');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        const open = navMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+
+    // Intersection Observer for fade animations
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
