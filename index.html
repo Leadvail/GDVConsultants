@@ -288,12 +288,14 @@
 
         <!-- Partner 1 -->
         <article class="partner-card fade-up" role="listitem" aria-labelledby="partner1-name">
-          <div class="silhouette-wrap" aria-label="Partner 1 silhouette placeholder">
-            <!-- Silhouette SVG -->
-            <svg viewBox="0 0 80 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="40" cy="24" r="16" />
-              <path d="M8 72c0-17.7 14.3-32 32-32s32 14.3 32 32H8z"/>
-            </svg>
+          <div class="partner-photo-wrap">
+            <img
+              src="images/partner1_headshot.jpg"
+              alt="Nick Gavriel, Founder of GDV Consultants"
+              width="120"
+              height="120"
+              loading="lazy"
+            >
           </div>
           <div class="partner-name" id="partner1-name">Nick Gavriel</div>
           <div class="partner-title">Founder</div>
@@ -630,7 +632,7 @@
       1: {
         name:  'Nick Gavriel',
         role:  'Founder',
-        photo: null,
+        photo: 'images/partner1_headshot.jpg',
         bio: ['TBC']
       },
       2: {
